@@ -1,6 +1,7 @@
 .dialogs{
     display: grid;
     grid-template-columns: 2fr 10fr;
+    color: #fff;
 }
 .dialogsItems{
     padding: 10px;    
@@ -10,15 +11,5 @@
 }
 .messages{
     padding: 10px;
+    color: #fff;
 }
-
-
-
-/* let dData = [
-    {id : 1, name: 'Salohiddin'},
-    {id : 2, name: 'Abduqodir'},
-    {id : 3, name: 'Ibrohim'},
-    {id : 4, name: 'Shohjahon'},
-    {id : 5, name: 'Xurshid'},
-    {id : 6, name: 'Abror'}
-] */

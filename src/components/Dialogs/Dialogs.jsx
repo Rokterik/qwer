@@ -1,21 +1,12 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import { NavLink } from 'react-router-dom';
-
-const DialogItem =  (props) =>{
-        let path = "/dialogs/" + props.id;
+import Message from './Message/Message';
+import DialogItem from './DialogItem/DialogItem';
 
 
-    return <div className={s.dialog + ' ' + s.active}>
-    <NavLink to={path}>{props.name}</NavLink>
-    </div>
-}
-
-const Message = (props) => {
-        return <div className={s.dialog}>{props.message}</div>
-}
 const Dialogs = (props) =>{
-    let dData = [
+    
+    let dialogs = [
         {id : 1, name: 'Salohiddin'},
         {id : 2, name: 'Abduqodir'},
         {id : 3, name: 'Ibrohim'},
@@ -23,31 +14,27 @@ const Dialogs = (props) =>{
         {id : 5, name: 'Xurshid'},
         {id : 6, name: 'Abror'}
     ]
-    let mData = [
+
+    let messages = [
         {id : 1, message: 'Salom'},
         {id : 2, message: 'Ish;aring yaxshimi?'},
         {id : 3, message: "Zo'r"},
         {id : 4, message: "Zo'r"},
         {id : 5, message: "Zo'r"}
     ]
+
+    let delements = dialogs.map (d => <DialogItem name={d.name} id={d.id}/>); 
+    let melements = messages.map(m => <Message message={m.message}/>);
+    
     return(
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem name={dData[0].name} id={dData[0].id}/> 
-                <DialogItem name={dData[1].name} id={dData[1].id}/> 
-                {/* <DialogItem name={dData[2].name} id={dData[2].id}/> 
-                <DialogItem name={dData[3].name} id={dData[3].id}/> 
-                <DialogItem name={dData[4].name} id={dData[4].id}/> 
-                <DialogItem name={dData[5].name} id={dData[5].id}/>  */}
-            </div>
-            <div className={s.messages}>
-                <Message message="Salom"/>
-                <Message message="Ishlaring yaxshimi?"/>
-                {/* <Message message="Zo'r"/>
-                <Message message="Zo'r"/>
-                <Message message="Zo'r"/> */}
+                {delements}
             </div>
 
+            <div className={s.messages}>
+                {melements}
+            </div>
         </div> 
     )
 }
