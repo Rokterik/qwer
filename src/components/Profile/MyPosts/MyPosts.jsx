@@ -3,7 +3,8 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 const MyPosts = (props) => {
 
-  let pelements = props.posts.map(p => <Post massage={p.message} likescount={p.likescount}/>)
+  let pelements =
+   props.posts.map(p => <Post massage={p.message} likescount={p.likescount}/>)
     return<div className={s.postsBlock}>  
       <h3>My posts</h3>
 
